@@ -24,9 +24,6 @@ Este projeto implementa um temporizador **de um disparo (one-shot)** usando a fu
 - Utiliza **call-backs** para controlar os LEDs de forma assíncrona.
 - Implementação de **software debounce** (opcional).
 - Proteção para evitar múltiplos acionamentos enquanto a sequência ainda está em execução.
-
-### Instruções de uso
 - Basta pressionar o botão uma única vez que irá ocorrer o que foi descrito
-- Se quiser pode pressionar diversas vezes durante o funcionamento que nada irá ocorrer.
 
 
