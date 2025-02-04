@@ -19,11 +19,31 @@ Este projeto implementa um temporizador **de um disparo (one-shot)** usando a fu
 - O LED verde se apaga após mais **3 segundos**.
 - O botão **só pode ser pressionado novamente** quando todos os LEDs estiverem apagados.
 
-### Instruções
+## Instruções de Uso
 
-- Utiliza **call-backs** para controlar os LEDs de forma assíncrona.
-- Implementação de **software debounce** (opcional).
-- Proteção para evitar múltiplos acionamentos enquanto a sequência ainda está em execução.
-- Basta pressionar o botão uma única vez que irá ocorrer o que foi descrito
+1. **Clone o repositório**:
+    ```sh
+    git clone https://github.com/yuriccosta/temporizador_one_shot
+    cd https://github.com/yuriccosta/temporizador_one_shot
+    ```
 
+2. **Configure o ambiente de desenvolvimento**:
+    - Instale a extensão do vscode: Raspberry Pi Pico e configure o ambiente conforme instruções.
+    - Instale a extensão do vscode: Wokwi e configure o ambiente conforme instruções.
 
+3. **Compile o código**:
+    - Abra o projeto no VS Code.
+    - Aperte no botão Compile da extensão do Pico SDK.
+
+4. **Carregue o código na Bitdoglab**:
+    - Conecte a Bitdoglab ao computador.
+    - Entre no modo de gravação.
+    - Aperte no botão Run da extensão do Pico SDK.
+
+5. **Rode no wokwi integrado ao vscode**:
+    - Abra o arquivo diagram.json.
+    - Aperte no botão Run da extensão do Wokwi.
+
+6. **Executando o código**:
+    - Pressione o botão para ligar os LEDs.
+    - Observe os LEDs desligando em sequência após os intervalos de 3 segundos.
