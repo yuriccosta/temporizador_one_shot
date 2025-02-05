@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 
+
+// Define os pinos dos leds e do botão
 #define LED_PIN_BLUE 11
 #define LED_PIN_RED 12
 #define LED_PIN_GREEN 13
@@ -25,6 +27,7 @@ int64_t turn_off_callback(alarm_id_t id, void *user_data) {
         return 0;
     }
 
+    // Próximo passo
     step++;
 
     return 0;
@@ -47,9 +50,7 @@ int main()
     gpio_set_dir(BUTTON_PIN, GPIO_IN);
     gpio_pull_up(BUTTON_PIN);
 
-    // Inicializa a interrupção
-
-
+    // Inicializa o stdio
     stdio_init_all();
     
 
@@ -58,11 +59,14 @@ int main()
             // Debounce
             uint32_t current_time = to_ms_since_boot(get_absolute_time());
             if (current_time - last_time > 200){
+                // Acende os leds
                 last_led_state = 1;
                 gpio_put(LED_PIN_BLUE, 1);
                 gpio_put(LED_PIN_GREEN, 1);
                 gpio_put(LED_PIN_RED, 1);
+
                 add_alarm_in_ms(3000, turn_off_callback, NULL, false);
+
                 last_time = current_time;
             }
         } 
